@@ -4,11 +4,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Date;
+
+import android.content.Context;
+import android.telephony.TelephonyManager;
+
+import com.parse.ParseObject;
 
 
 public class PerformanceMeasurement {
-	public final String imei;
+	public  String imei;
 	public Boolean perfCalculated = false;
 	public final String PerfName = "Download Speed Test";
 	public float perfResult;
@@ -18,10 +22,15 @@ public class PerformanceMeasurement {
 	public String temporary;
 	public String temporary2;
 
-	// constructor
 	public PerformanceMeasurement(){
+	}
+	
+	// constructor
+	public PerformanceMeasurement(Context context){
 		// get IMEI of this device
 		this.imei = "temporary IMEI";
+		TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+		this.imei = telephonyManager.getDeviceId();
 	}
 
 	// code to calculate a performance measurement
@@ -82,13 +91,22 @@ public class PerformanceMeasurement {
 	}
 	
 	// code to save a performance measurement
-	// likely this is going to have to be threaded
 	public void Save(){
+		
+		ParseObject perfMeasure = new ParseObject("PerfMeasure");
+		perfMeasure.put("imei", this.imei);
+		perfMeasure.put("PerfName", this.PerfName);
+		perfMeasure.put("perfResult", this.perfResult);
+		perfMeasure.put("perfSaveTime", System.currentTimeMillis());
+		
+		perfMeasure.saveInBackground();
+		
 	}
 	
 	@Override
 	public String toString(){
-		return  "Performance result is (Bytes/Sec):\n" + this.perfResult
+		return  "Device ID: " + this.imei + "\n" +
+				"Performance result is (Bytes/Sec):\n" + this.perfResult
 				+ "\nPerformance time is (msecs):" + this.perfTime
 				+ "\nnum bytes received is:" + this.perfBytes;
 		

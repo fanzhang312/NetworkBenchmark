@@ -5,16 +5,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.parse.Parse;
+
 
 
 public class MainActivity extends Activity {
 
-    public final static PerformanceMeasurement PerfMeasure = new PerformanceMeasurement();
+    public PerformanceMeasurement PerfMeasure;
     public final static String EXTRA_MESSAGE = "com.NetworkBenchmark.MESSAGE";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.PerfMeasure = new PerformanceMeasurement(this.getBaseContext());
+        Parse.initialize(this, "qT4wyDLVqILutqN3RRTbUxLwqiXFIHPXqnsVX7B5", "FGWV2oti13RNZrVendUhCW2TsmV8TbkOB3AjbWfO"); 
         setContentView(R.layout.activity_main);
     }
 
