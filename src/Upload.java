@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import com.google.gdata.data.spreadsheet.SpreadsheetFeed;
 import com.google.gdata.data.spreadsheet.WorksheetEntry;
 import com.google.gdata.data.spreadsheet.WorksheetFeed;
 import com.google.gdata.util.AuthenticationException;
-import com.google.gdata.util.ServiceException;
 
 
 public class Upload {
@@ -88,8 +86,6 @@ public class Upload {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Upload u = new Upload("35-209900-176148-2", "{ping:'36ms',download:'3.60Mbps',upload:'1.33Mbps'}");
-//		Upload u = new Upload();
-//		u.GetSpreadsheetService();
 	}
 
 }
