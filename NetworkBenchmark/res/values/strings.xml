@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NetworkBenchmark</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="calc_perf_measure">Calculate Performance Measurement</string>
+    <string name="view_perf_measure">View Performance Measurement</string>
+    <string name="save_perf_measure">Save Performance Measurement</string>
+    <string name="title_activity_view_perf_measure">View Performance Measurement</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
