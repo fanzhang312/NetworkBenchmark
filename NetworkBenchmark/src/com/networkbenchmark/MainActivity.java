@@ -1,8 +1,13 @@
 package com.networkbenchmark;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -47,10 +52,14 @@ public class MainActivity extends Activity {
     
     /** Called when the user clicks the Save Performance Measurement button */
     public void savePerfMeasure(View view) {
-    	PerfMeasure.Save();
+    	double[] gps = getGPS();
+    	PerfMeasure.Save(gps);
     	alertbox("Save Results","The performance results are saved successfully.");
     }
     
+    /**
+     * Define an alert window 
+     */
     protected void alertbox(String title, String mymessage)
     {
     new AlertDialog.Builder(this)
@@ -63,6 +72,26 @@ public class MainActivity extends Activity {
           })
        .show();
     }
- // see http://androidsnippets.com/display-an-alert-box
+    
+    /**
+     * Get the GPS location
+     * @return double[] gps
+     */
+    private double[] getGPS() {
+		LocationManager locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+		List<String> providers = locationManager.getProviders(true);
+		Location location = null;
+		for(String provider: providers){
+			location = locationManager.getLastKnownLocation(provider);
+			if(location != null) break;
+		}
+		
+		double[] gps = new double[2];
+		if (location != null) {
+			gps[0] = location.getLatitude();
+			gps[1] = location.getLongitude();
+		}
+		return gps;
+	}
     
 }
