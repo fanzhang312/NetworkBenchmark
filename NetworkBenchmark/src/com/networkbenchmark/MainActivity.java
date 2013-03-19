@@ -1,5 +1,7 @@
 package com.networkbenchmark;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +35,7 @@ public class MainActivity extends Activity {
     /** Called when the user clicks the Calculate Performance Measurement button */
     public void calcPerfMeasure(View view) {
     	PerfMeasure.Calculate();
+    	alertbox("HTTP Download Performance",PerfMeasure.toString());
     }
     
     public void viewPerfMeasure(View view) {
@@ -45,8 +48,21 @@ public class MainActivity extends Activity {
     /** Called when the user clicks the Save Performance Measurement button */
     public void savePerfMeasure(View view) {
     	PerfMeasure.Save();
+    	alertbox("Save Results","The performance results are saved successfully.");
     }
     
-    
+    protected void alertbox(String title, String mymessage)
+    {
+    new AlertDialog.Builder(this)
+       .setMessage(mymessage)
+       .setTitle(title)
+       .setCancelable(true)
+       .setNeutralButton("Done",
+          new DialogInterface.OnClickListener() {
+          public void onClick(DialogInterface dialog, int whichButton){}
+          })
+       .show();
+    }
+ // see http://androidsnippets.com/display-an-alert-box
     
 }

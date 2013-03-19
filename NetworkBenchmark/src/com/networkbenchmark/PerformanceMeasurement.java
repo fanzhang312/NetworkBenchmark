@@ -105,8 +105,8 @@ public class PerformanceMeasurement {
 	
 	@Override
 	public String toString(){
-		return  "Device ID: " + this.imei + "\n" +
-				"Performance result is (Bytes/Sec):\n" + this.perfResult
+		return  "Device ID: " + this.imei +
+				"\nPerformance result is (Bytes/Sec):" + this.perfResult
 				+ "\nPerformance time is (msecs):" + this.perfTime
 				+ "\nnum bytes received is:" + this.perfBytes;
 		
