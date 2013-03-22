@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:text="@string/calc_perf_measure" 
         android:onClick="calcPerfMeasure"/>
+    
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,4 +20,9 @@
         android:layout_height="wrap_content"
         android:text="@string/save_perf_measure" 
         android:onClick="savePerfMeasure"/>
+     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/map" 
+        android:onClick="Map"/>
 </LinearLayout>
