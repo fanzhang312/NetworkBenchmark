@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
@@ -91,22 +90,25 @@ public class PerformanceMeasurement {
 	}
 	
 	// code to save a performance measurement
-	public void Save(){
+	public void Save(double[] gps){
 		
 		ParseObject perfMeasure = new ParseObject("PerfMeasure");
 		perfMeasure.put("imei", this.imei);
 		perfMeasure.put("PerfName", this.PerfName);
 		perfMeasure.put("perfResult", this.perfResult);
 		perfMeasure.put("perfSaveTime", System.currentTimeMillis());
-		
+		perfMeasure.put("perfMeasureTime", this.perfTime);
+		perfMeasure.put("receivedBytes", this.perfBytes);
+		perfMeasure.put("latitude", gps[0]);
+		perfMeasure.put("longitude", gps[1]);
 		perfMeasure.saveInBackground();
 		
 	}
 	
 	@Override
 	public String toString(){
-		return  "Device ID: " + this.imei + "\n" +
-				"Performance result is (Bytes/Sec):\n" + this.perfResult
+		return  "Device ID: " + this.imei +
+				"\nPerformance result is (Bytes/Sec):" + this.perfResult
 				+ "\nPerformance time is (msecs):" + this.perfTime
 				+ "\nnum bytes received is:" + this.perfBytes;
 		
@@ -114,4 +116,5 @@ public class PerformanceMeasurement {
 			//	+ "\n" + this.temporary + "\n" + this.temporary2;
 		//return this.temporary2;
 	}
+	
 }
