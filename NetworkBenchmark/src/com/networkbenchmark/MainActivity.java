@@ -70,8 +70,11 @@ public class MainActivity extends Activity {
 
 	/**
 	 * Define an alert window
+	 * 
+	 * Add scrollview to the alertbox
 	 */
 	protected void alertbox(String title, String mymessage) {
+		// add scrollview to alertbox
 		setContentView(R.layout.scroll_result);
 		new AlertDialog.Builder(this)
 				.setMessage(mymessage)
@@ -85,22 +88,7 @@ public class MainActivity extends Activity {
 						}).show();
 	}
 
-	/*
-	 * public void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
-	 * setMeasureDimension(800,2000); }
-	 */
 
-	/*
-	 * public void TextView(Context context, AttributeSet attrs){ TextView
-	 * (context, attrs); }
-	 */
-
-	/*
-	 * protected void alertDialog(){ new
-	 * AlertDialog.Builder(this).setTitle("title").setMultiChoiceItems( new
-	 * String[]{"item1", "item2"},null,null) .setPositiveButton("Yes", null)
-	 * .setNegativeButton("No",null).show(); }
-	 */
 
 	/**
 	 * Get the GPS location
