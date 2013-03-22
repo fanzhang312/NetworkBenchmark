@@ -58,6 +58,15 @@ public class MainActivity extends Activity {
     }
     
     /**
+     * Display the history data for a specified IMEI
+     * @param view
+     */
+    public void viewPerfHistory(View view) {
+    	PerformanceResults history = new PerformanceResults(PerfMeasure.imei);
+    	alertbox("Performance History", history.printList(history.getHistory()));
+    }
+    
+    /**
      * Define an alert window 
      */
     protected void alertbox(String title, String mymessage)

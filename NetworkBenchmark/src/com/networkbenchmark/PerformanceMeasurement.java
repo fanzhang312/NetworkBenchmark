@@ -4,11 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
-
 import android.content.Context;
-import android.location.Location;
-import android.location.LocationManager;
 import android.telephony.TelephonyManager;
 
 import com.parse.ParseObject;
@@ -101,6 +97,8 @@ public class PerformanceMeasurement {
 		perfMeasure.put("PerfName", this.PerfName);
 		perfMeasure.put("perfResult", this.perfResult);
 		perfMeasure.put("perfSaveTime", System.currentTimeMillis());
+		perfMeasure.put("perfMeasureTime", this.perfTime);
+		perfMeasure.put("receivedBytes", this.perfBytes);
 		perfMeasure.put("latitude", gps[0]);
 		perfMeasure.put("longitude", gps[1]);
 		perfMeasure.saveInBackground();
