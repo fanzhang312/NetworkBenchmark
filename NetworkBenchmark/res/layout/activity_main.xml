@@ -24,4 +24,9 @@
         android:layout_height="wrap_content"
         android:text="@string/view_perf_history"
         android:onClick="viewPerfHistory"/>
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ping_button"
+        android:onClick="pingFunction"/>
 </LinearLayout>

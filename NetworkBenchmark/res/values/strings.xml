@@ -10,7 +10,11 @@
     <string name="view_perf_measure">View Performance Measurement</string>
     <string name="save_perf_measure">Save Performance Measurement</string>
     <string name="title_activity_view_perf_measure">View Performance Measurement</string>
+    <string name="title_ping_function">Ping Measurement</string>
     <string name="view_perf_history">View Performance History</string>
+    <string name="ping_button">Ping</string>
+    <string name="URL"></string>
+    <string name="Ping">Ping</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

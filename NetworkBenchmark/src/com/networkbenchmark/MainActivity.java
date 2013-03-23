@@ -66,6 +66,12 @@ public class MainActivity extends Activity {
     	alertbox("Performance History", history.printList(history.getHistory()));
     }
     
+    public void pingFunction(View view) {
+    	Intent intent = new Intent(this, PingActivity.class);
+    	// this should take in the whole PerfMeasure object to process
+    	intent.putExtra(EXTRA_MESSAGE, "Ping");
+    	startActivity(intent);
+    }
     /**
      * Define an alert window 
      */

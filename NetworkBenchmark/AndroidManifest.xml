@@ -31,6 +31,10 @@
             android:name="com.networkbenchmark.ViewPerfMeasureActivity"
             android:label="@string/title_activity_view_perf_measure" >
         </activity>
+        <activity
+            android:name="com.networkbenchmark.PingActivity"
+            android:label="@string/title_ping_function" >
+        </activity>
     </application>
 
 </manifest>
