@@ -44,7 +44,7 @@ public class PingActivity extends Activity {
 //					Runtime r = Runtime.getRuntime();
 //					Process p = r.exec(pingCmd+host.toString());
 					
-					// The second way to create process
+					// The second way to create process, ping the android.com 
 					Process p = new ProcessBuilder()
 				       .command(pingCmd, "android.com")
 				       .redirectErrorStream(true)

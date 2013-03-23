@@ -16,5 +16,6 @@
     <string name="URL"></string>
     <string name="Ping">Ping</string>
     <string name="hello_world">Hello world!</string>
+    <string name="view_map">show map!</string>
 
 </resources>

@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:text="@string/calc_perf_measure" 
         android:onClick="calcPerfMeasure"/>
+    
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -29,4 +30,12 @@
         android:layout_height="wrap_content"
         android:text="@string/ping_button"
         android:onClick="pingFunction"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_map"
+        android:onClick="viewmap"/>
+   
+    
 </LinearLayout>
+

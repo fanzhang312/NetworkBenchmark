@@ -1,20 +1,23 @@
 package com.networkbenchmark;
+
 import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+
 import android.content.Context;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 
 import com.parse.Parse;
-
-
 
 public class MainActivity extends Activity {
 
@@ -72,21 +75,25 @@ public class MainActivity extends Activity {
     	intent.putExtra(EXTRA_MESSAGE, "Ping");
     	startActivity(intent);
     }
-    /**
-     * Define an alert window 
-     */
-    protected void alertbox(String title, String mymessage)
-    {
-    new AlertDialog.Builder(this)
-       .setMessage(mymessage)
-       .setTitle(title)
-       .setCancelable(true)
-       .setNeutralButton("Done",
-          new DialogInterface.OnClickListener() {
-          public void onClick(DialogInterface dialog, int whichButton){}
-          })
-       .show();
-    }
+	/**
+	 * Define an alert window
+	 * 
+	 * Add scrollview to the alertbox
+	 */
+	protected void alertbox(String title, String mymessage) {
+		// add scrollview to alertbox
+		new AlertDialog.Builder(this)
+				.setMessage(mymessage)
+				.setTitle(title)
+				.setView(LayoutInflater.from(this).inflate(R.layout.scroll_result,null))
+				.setCancelable(true)
+				.setNeutralButton("Done",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+							}
+						}).show();
+	}   
     
     /**
      * Get the GPS location
@@ -96,11 +103,12 @@ public class MainActivity extends Activity {
 		LocationManager locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
 		List<String> providers = locationManager.getProviders(true);
 		Location location = null;
-		for(String provider: providers){
+		for (String provider : providers) {
 			location = locationManager.getLastKnownLocation(provider);
-			if(location != null) break;
+			if (location != null)
+				break;
 		}
-		
+
 		double[] gps = new double[2];
 		if (location != null) {
 			gps[0] = location.getLatitude();
@@ -108,5 +116,5 @@ public class MainActivity extends Activity {
 		}
 		return gps;
 	}
-    
+
 }
