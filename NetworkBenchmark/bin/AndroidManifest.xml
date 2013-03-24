@@ -5,9 +5,12 @@
     android:versionName="1.0" >
     
 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">  
+    </uses-permission>
+    
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
@@ -29,6 +32,10 @@
         <activity
             android:name="com.networkbenchmark.ViewPerfMeasureActivity"
             android:label="@string/title_activity_view_perf_measure" >
+        </activity>
+        <activity
+            android:name="com.networkbenchmark.PingActivity"
+            android:label="@string/title_ping_function" >
         </activity>
     </application>
 
