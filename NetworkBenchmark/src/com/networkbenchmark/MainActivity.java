@@ -4,15 +4,12 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-
 import android.content.Context;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
