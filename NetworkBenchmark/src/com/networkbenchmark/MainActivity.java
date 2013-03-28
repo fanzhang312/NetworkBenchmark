@@ -46,8 +46,9 @@ public class MainActivity extends Activity {
     public void viewPerfMeasure(View view) {
     	Intent intent = new Intent(this, ViewPerfMeasureActivity.class);
     	// this should take in the whole PerfMeasure object to process
-    	intent.putExtra(EXTRA_MESSAGE, PerfMeasure.toString());
-    	startActivity(intent);
+    	//intent.putExtra(EXTRA_MESSAGE, PerfMeasure.toString());
+    	//startActivity(intent);
+    	alertbox("Review Your Download Performance", PerfMeasure.toString());
     }
     
     /** Called when the user clicks the Save Performance Measurement button */
@@ -71,6 +72,32 @@ public class MainActivity extends Activity {
     	// this should take in the whole PerfMeasure object to process
     	intent.putExtra(EXTRA_MESSAGE, "Ping");
     	startActivity(intent);
+    }
+    
+    public void helpFunction(View view) {
+    	alertbox("How to use", 
+    			"Speed Test: Check your internet speed\n" +
+    			"View Result: Review your speed test\n" +
+    			"Save the data: Save your speed test\n" +
+    			"View History: Check all speed tests\n" +
+    			"Ping Test: Test ping\n" +
+    			"Show map: Show your location\n\n\n" +
+    			
+    			"Update\n" +
+				"Version 1.5: Added GUI\n" +
+				"Version 1.4: Added Ping Test\n" +
+				"Version 1.3: Added View History\n" +
+				"Version 1.2: Added Save The Data\n" +
+				"Version 1.1: Added View Result\n" +
+    			"Version 1.0: Added Speed Test\n\n" +
+    			
+    			"Developer:\n" +
+    			"     Jeremy, Fan, Zhiqi, Yongtak\n");
+    	 
+    }
+    
+    public void viewmap(View view){
+    	alertbox("Warnning", "It is not working yet");
     }
 	/**
 	 * Define an alert window
