@@ -91,6 +91,7 @@ public class MainActivity extends Activity {
     			"Show map: Show your performance history based on location\n\n\n" +
     			
     			"Update\n" +
+    			"Version 1.6: Added Map function\n"+
 				"Version 1.5: Added GUI\n" +
 				"Version 1.4: Added Ping Test\n" +
 				"Version 1.3: Added View History\n" +
