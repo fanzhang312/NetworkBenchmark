@@ -40,6 +40,9 @@ public class PerformanceMeasurement {
 		// start a thread to calculate download speed in background
 		Thread t = new Thread(new downloader(this));
 		t.start();
+		try {
+			t.join();
+		} catch (Exception e){}
 	}
 	
 	// code to calculate download speed goes here

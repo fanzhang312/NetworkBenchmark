@@ -1,41 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/calc_perf_measure" 
-        android:onClick="calcPerfMeasure"/>
+    android:shrinkColumns="*"  
+    android:stretchColumns="*"
+    android:background="#ffffff" >
     
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_perf_measure" 
-        android:onClick="viewPerfMeasure"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save_perf_measure" 
-        android:onClick="savePerfMeasure"/>
-    <Button 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_perf_history"
-        android:onClick="viewPerfHistory"/>
-    <Button 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ping_button"
-        android:onClick="pingFunction"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_map"
-        android:onClick="viewmap"/>
-   
-    
-</LinearLayout>
+    <TableRow  
+        android:id="@+id/tableRow4"  
+        android:layout_height="wrap_content"  
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal">
 
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backgroundword1"
+            android:layout_span="2" />
+        
+    </TableRow>  
+
+    <TableRow  
+        android:id="@+id/tableRow1"  
+        android:layout_height="wrap_content"  
+        android:layout_width="match_parent"
+        android:paddingTop="30dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="90dip"
+            android:layout_height="120dip"
+            android:background="@drawable/speedtest_button"
+            android:clickable="true"
+            android:onClick="calcPerfMeasure" />
+        
+        <Button
+        	android:id="@+id/button3"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:onClick="viewPerfMeasure"
+        	android:clickable="true"
+        	android:background="@drawable/result_button" />
+        
+        <Button
+       		android:id="@+id/button2"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/save_button"
+        	android:clickable="true"
+        	android:onClick="savePerfMeasure" />
+        
+    </TableRow>
+    
+    <TableRow  
+        android:id="@+id/tableRow2"  
+        android:layout_height="wrap_content"  
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:paddingTop="10dip">
+    
+        <Button
+        	android:id="@+id/button4"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/history_button"
+        	android:clickable="true"
+        	android:onClick="viewPerfHistory" />
+        
+        <Button
+        	android:id="@+id/button5"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/ping_button"
+        	android:clickable="true"
+        	android:onClick="pingFunction" />
+        
+        <Button
+        	android:id="@+id/button6"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/map_button"
+        	android:clickable="true"
+        	android:onClick="viewmap" />
+        
+    </TableRow>
+    
+    <TableRow  
+        android:id="@+id/tableRow3"  
+        android:layout_height="wrap_content"  
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dip">
+        
+        <Button
+        	android:id="@+id/button7"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/help_button"
+        	android:onClick="helpFunction" 
+        	android:clickable="true"
+        	android:layout_span="1" />
+        
+    </TableRow> 
+    
+    
+</TableLayout>

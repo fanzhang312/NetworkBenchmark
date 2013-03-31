@@ -29,7 +29,7 @@ public class PingActivity extends Activity {
 		setContentView(R.layout.ping_view);
 		
 		edit = (EditText) findViewById(R.id.editText1);
-		edit.setText("127.0.0.1");
+		edit.setText("www.google.com");
 		text = (TextView) findViewById(R.id.textView1);
 		Button button = (Button) findViewById(R.id.button1);
 		button.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +49,11 @@ public class PingActivity extends Activity {
 //				       .command(pingCmd, "android.com")
 //				       .redirectErrorStream(true)
 //				       .start();
+
+
+					//see man ping for more options, -s packetsize may be interesting
+					// -v verbose
+
 					Process p = runtime.exec("ping -c 3 " + host);
 					p.waitFor();
 					
