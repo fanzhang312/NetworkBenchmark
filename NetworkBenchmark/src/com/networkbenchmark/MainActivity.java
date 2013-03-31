@@ -13,13 +13,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-
 import com.parse.Parse;
 
-public class MainActivity extends Activity {
 
+public class MainActivity extends Activity {
+	
     public PerformanceMeasurement PerfMeasure;
     public final static String EXTRA_MESSAGE = "com.NetworkBenchmark.MESSAGE";
+    
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,6 @@ public class MainActivity extends Activity {
         Parse.initialize(this, "qT4wyDLVqILutqN3RRTbUxLwqiXFIHPXqnsVX7B5", "FGWV2oti13RNZrVendUhCW2TsmV8TbkOB3AjbWfO"); 
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
     public void viewPerfMeasure(View view) {
     	Intent intent = new Intent(this, ViewPerfMeasureActivity.class);
     	// this should take in the whole PerfMeasure object to process
-    	//intent.putExtra(EXTRA_MESSAGE, PerfMeasure.toString());
+    	intent.putExtra(EXTRA_MESSAGE, PerfMeasure.toString());
     	//startActivity(intent);
     	alertbox("Review Your Download Performance", PerfMeasure.toString());
     }
@@ -96,8 +96,11 @@ public class MainActivity extends Activity {
     	 
     }
     
-    public void viewmap(View view){
-    	alertbox("Warnning", "It is not working yet");
+    public void viewmap(View arg0){
+    	Intent intent2 = new Intent(this, WebViewActivity.class);
+    	double[] gps = getGPS();
+    	intent2.putExtra(EXTRA_MESSAGE, gps);
+		startActivity(intent2);
     }
 	/**
 	 * Define an alert window

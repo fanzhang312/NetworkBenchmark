@@ -38,6 +38,9 @@
             android:name="com.networkbenchmark.PingActivity"
             android:label="@string/title_ping_function" >
         </activity>
+        <activity
+            android:name="com.networkbenchmark.WebViewActivity" >
+        </activity>
     </application>
 
 </manifest>
