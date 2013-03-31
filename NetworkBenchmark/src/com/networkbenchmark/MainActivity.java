@@ -75,6 +75,12 @@ public class MainActivity extends Activity {
     	intent.putExtra(EXTRA_MESSAGE, "Ping");
     	startActivity(intent);
     }
+    
+    public void viewmap(View view){
+    	Intent intent = new Intent(this, DisplayActivity.class);
+    	intent.putExtra(EXTRA_MESSAGE, PerfMeasure.imei);
+    	startActivity(intent);
+    }
 	/**
 	 * Define an alert window
 	 * 

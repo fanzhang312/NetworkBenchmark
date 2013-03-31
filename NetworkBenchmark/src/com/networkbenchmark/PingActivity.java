@@ -38,18 +38,18 @@ public class PingActivity extends Activity {
 				// TODO Auto-generated method stub
 				Editable host = edit.getText();
 				try {
-					String pingCmd = "/system/bin/ping";
-					
+					String pingCmd = "ping";
+					Runtime runtime = Runtime.getRuntime();
 					// The first way to create process
 //					Runtime r = Runtime.getRuntime();
 //					Process p = r.exec(pingCmd+host.toString());
 					
 					// The second way to create process, ping the android.com 
-					Process p = new ProcessBuilder()
-				       .command(pingCmd, "android.com")
-				       .redirectErrorStream(true)
-				       .start();
-
+//					Process p = new ProcessBuilder()
+//				       .command(pingCmd, "android.com")
+//				       .redirectErrorStream(true)
+//				       .start();
+					Process p = runtime.exec("ping -c 3 " + host);
 					p.waitFor();
 					
 					String pingResult = pingCmd.toString();
