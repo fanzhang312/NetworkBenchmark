@@ -34,7 +34,7 @@ public class DisplayActivity extends MapActivity {
 		// Get the message from the intent
 		Intent intent = getIntent();
 		String imei = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-		imei = "A1000013765D35";
+//		imei = "A1000013765D35";
 		// Get history data for the specified IMEI
 		PerformanceResults history = new PerformanceResults(imei);
 		List<ParseObject> historyData = history.getHistory();
