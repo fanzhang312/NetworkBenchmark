@@ -91,6 +91,7 @@ public class MainActivity extends Activity {
     			"Show map: Show your performance history based on location\n\n\n" +
     			
     			"Update\n" +
+    			"Version 1.7: Added My location\n"+
     			"Version 1.6: Added Map function\n"+
 				"Version 1.5: Added GUI\n" +
 				"Version 1.4: Added Ping Test\n" +
@@ -104,12 +105,12 @@ public class MainActivity extends Activity {
     	 
     }
     
-//    public void viewmap(View arg0){
-//    	Intent intent2 = new Intent(this, WebViewActivity.class);
-//    	double[] gps = getGPS();
-//    	intent2.putExtra(EXTRA_MESSAGE, gps);
-//		startActivity(intent2);
-//    }
+    public void myLocation(View arg0){
+    	Intent intent2 = new Intent(this, WebViewActivity.class);
+    	double[] gps = getGPS();
+    	intent2.putExtra(EXTRA_MESSAGE, gps);
+		startActivity(intent2);
+    }
 	/**
 	 * Define an alert window
 	 * 
