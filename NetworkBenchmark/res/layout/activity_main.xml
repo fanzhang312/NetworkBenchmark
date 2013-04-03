@@ -60,7 +60,9 @@
         android:layout_height="wrap_content"  
         android:layout_width="match_parent"
         android:gravity="center"
-        android:paddingTop="10dip">
+        android:paddingTop="10dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip">
     
         <Button
         	android:id="@+id/button4"
@@ -92,17 +94,28 @@
         android:id="@+id/tableRow3"  
         android:layout_height="wrap_content"  
         android:layout_width="match_parent"
-        android:gravity="center_horizontal"
-        android:paddingTop="10dip">
+        android:gravity="center"
+        android:paddingTop="10dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip">
         
         <Button
         	android:id="@+id/button7"
         	android:layout_width="90dip"
         	android:layout_height="120dip"
+        	android:background="@drawable/mylocation_button"
+        	android:onClick="myLocation" 
+        	android:clickable="true"
+        	/>
+        
+        <Button
+        	android:id="@+id/button8"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
         	android:background="@drawable/help_button"
         	android:onClick="helpFunction" 
-        	android:clickable="true"
-        	android:layout_span="1" />
+        	android:clickable="true"        	
+        	/>
         
     </TableRow> 
     
