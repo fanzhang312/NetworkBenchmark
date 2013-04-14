@@ -117,6 +117,15 @@
         	android:clickable="true"        	
         	/>
         
+        <Button
+        	android:id="@+id/button9"
+        	android:layout_width="90dip"
+        	android:layout_height="120dip"
+        	android:background="@drawable/ftp_button"
+        	android:onClick="?????" 
+        	android:clickable="true"        	
+        	/>
+        
     </TableRow> 
     
     
